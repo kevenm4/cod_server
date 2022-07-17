@@ -8,6 +8,9 @@ const classSchema = new Schema({
   assault_rifle: {
     imageUrl: String,
     name: String,
+    accuracy: String,
+    range: String,
+    damage: String,
     attachment: {
       muzzel: String,
       underbarrel: String,
@@ -25,6 +28,9 @@ const classSchema = new Schema({
   sniper: {
     imageUrl: String,
     name: String,
+    accuracy: String,
+    range: String,
+    damage: String,
     attachment: {
       muzzel: String,
       underbarrel: String,
@@ -41,6 +47,9 @@ const classSchema = new Schema({
   smgs: {
     imageUrl: String,
     name: String,
+    accuracy: String,
+    range: String,
+    damage: String,
     attachment: {
       muzzel: String,
       underbarrel: String,
@@ -57,6 +66,9 @@ const classSchema = new Schema({
   lmgs: {
     imageUrl: String,
     name: String,
+    accuracy: String,
+    range: String,
+    damage: String,
     attachment: {
       muzzel: String,
       underbarrel: String,
@@ -73,6 +85,9 @@ const classSchema = new Schema({
   shotguns: {
     imageUrl: String,
     name: String,
+    accuracy: String,
+    range: String,
+    damage: String,
     attachment: {
       muzzel: String,
       underbarrel: String,
@@ -89,6 +104,9 @@ const classSchema = new Schema({
   pistols: {
     imageUrl: String,
     name: String,
+    accuracy: String,
+    range: String,
+    damage: String,
     attachment: {
       muzzel: String,
       underbarrel: String,
@@ -105,10 +123,16 @@ const classSchema = new Schema({
   knifes: {
     imageUrl: String,
     name: String,
+    accuracy: String,
+    range: String,
+    damage: String,
   },
   launchers: {
     imageUrl: String,
     name: String,
+    accuracy: String,
+    range: String,
+    damage: String,
     attachment: {
       muzzel: String,
       underbarrel: String,
