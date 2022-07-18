@@ -3,28 +3,11 @@ const fileUploader = require("../config/cloudinary.config");
 const Class = require("../models/Class.model");
 const { isAuthenticated } = require("../middleware/jwt.middleware");
 router.post("/class-create", isAuthenticated, (req, res, next) => {
-  const {
-    author,
-    assault_rifle,
-    sniper,
-    smgs,
-    lmgs,
-    shotguns,
-    pistols,
-    launchers,
-    perk1,
-    perk2,
-  } = req.body;
+  const { author, types, perk1, perk2 } = req.body;
   const { _id } = req.payload;
 
   Class.create({
-    assault_rifle,
-    sniper,
-    smgs,
-    lmgs,
-    shotguns,
-    pistols,
-    launchers,
+    types,
     perk1,
     perk2,
     author: _id,
