@@ -3,7 +3,6 @@ const fileUploader = require("../config/cloudinary.config");
 const Class = require("../models/Class.model");
 const { isAuthenticated } = require("../middleware/jwt.middleware");
 router.post("/class-create", isAuthenticated, (req, res, next) => {
-
   const {
     author,
     assault_rifle,
@@ -63,7 +62,14 @@ router.get("/class/:id", isAuthenticated, (req, res, next) => {
       res.status(400).json({ message: "classes not found!!" });
     });
 });
+router.post("/classes/search", isAuthenticated, (req, res, next) => {
+  const { name } = req.body;
+  console.log(name);
+  User.find({ $regex: name, $options: "i" })
 
+    .then((classFromDB) => res.status(200).json(classFromDB))
+    .catch((err) => res.status(400).json({ message: "class not found!!" }));
+});
 router.get("/classes", isAuthenticated, (req, res, next) => {
   Class.find()
 
